@@ -5,3 +5,6 @@
 ```
 git clone https://github.com/jessfin/nssign
 ```
+```
+cd nssign
+```
