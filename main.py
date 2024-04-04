@@ -14,10 +14,10 @@ with sync_playwright() as p:
     page.goto('https://www.nodeseek.com/signIn.html')
 
     # 找到邮箱输入框并输入数据
-    page.fill('#stacked-email', 'jess')
+    page.fill('#stacked-email', 'jess', timeout=60000)
 
     # 找到密码输入框并输入数据
-    page.fill('#stacked-password', 'xjlxjl123')
+    page.fill('#stacked-password', 'xjlxjl123', timeout=60000)
 
     # 找到登录按钮并点击
     page.click('//button[@type="submit"]')
