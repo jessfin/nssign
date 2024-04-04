@@ -6,25 +6,24 @@ import requests
 import json
 import time
 
-# 创建一个新的浏览器实例
 driver = webdriver.Firefox()
 
 # 打开登录页面
 driver.get('https://www.nodeseek.com/signIn.html')
 
-# 找到邮箱输入框并输入数据
+# 找到输入框并输入数据
 email_field = driver.find_element(By.ID, 'stacked-email')
-email_field.send_keys('jess')
+email_field.send_keys('username')
 
 # 找到密码输入框并输入数据
 password_field = driver.find_element(By.ID, 'stacked-password')
-password_field.send_keys('xjlxjl123')
+password_field.send_keys('password')
 
 # 找到登录按钮并点击
 login_button = driver.find_element(By.XPATH, '//button[@type="submit"]')
 login_button.click()
 
-# 等待10秒，让JavaScript有足够的时间设置cookie
+# 等待10秒
 time.sleep(10)
 
 # 获取cookies
@@ -33,7 +32,6 @@ cookies = driver.get_cookies()
 # 转换cookies为headers中的"Cookie"字段可以使用的格式
 cookie_str = "; ".join([f"{cookie['name']}={cookie['value']}" for cookie in cookies])
 
-# 现在你可以使用requests库发送POST请求
 url = "https://www.nodeseek.com/api/attendance?random=true"
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0",
