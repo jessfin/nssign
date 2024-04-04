@@ -23,7 +23,7 @@ with sync_playwright() as p:
     page.click('//button[@type="submit"]')
 
     # 等待10秒，让JavaScript有足够的时间设置cookie
-    time.sleep(30)
+    time.sleep(60)
 
     # 获取cookies
     cookies = page.context.cookies()
