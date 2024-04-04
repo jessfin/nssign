@@ -13,11 +13,11 @@ driver.get('https://www.nodeseek.com/signIn.html')
 
 # 找到输入框并输入数据
 email_field = driver.find_element(By.ID, 'stacked-email')
-email_field.send_keys('username')
+email_field.send_keys('jess')
 
 # 找到密码输入框并输入数据
 password_field = driver.find_element(By.ID, 'stacked-password')
-password_field.send_keys('password')
+password_field.send_keys('xjlxjl123')
 
 # 找到登录按钮并点击
 login_button = driver.find_element(By.XPATH, '//button[@type="submit"]')
