@@ -8,7 +8,7 @@ git clone https://github.com/jessfin/nssign
 cd nssign
 ```
 ```
-pip requirements.txt
+pip install requirements.txt
 playwright install firefox
 ```
 ```
