@@ -1,2 +1,2 @@
 # nssign
- nodeseek自动随机获取鸡腿
+ nodeseek自动获取随机鸡腿
