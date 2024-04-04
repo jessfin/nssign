@@ -17,7 +17,7 @@ with sync_playwright() as p:
 
     page.click('//button[@type="submit"]')
 
-    time.sleep(60)
+    time.sleep(10)
 
     cookies = page.context.cookies()
 
