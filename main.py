@@ -3,36 +3,44 @@ import requests
 import json
 import time
 
+accounts = [
+    {'username': 'username1', 'password': 'password1'},
+    {'username': 'username2', 'password': 'password2'},
+    {'username': 'username3', 'password': 'password3'}   #参照此示例可以继续添加需要签到的账号
+]
+
 with sync_playwright() as p:
+    for account in accounts:
 
-    browser = p.firefox.launch()
+        browser = p.firefox.launch()
 
-    page = browser.new_page()
+        page = browser.new_page()
 
-    page.goto('https://www.nodeseek.com/signIn.html')
+        page.goto('https://www.nodeseek.com/signIn.html')
 
-    page.fill('#stacked-email', 'username')
+        page.fill('#stacked-email', account['username'])
 
-    page.fill('#stacked-password', 'password')
+        page.fill('#stacked-password', account['password'])
 
-    page.click('//button[@type="submit"]')
+        page.click('//button[@type="submit"]')
 
-    time.sleep(10)
+        time.sleep(60)
 
-    cookies = page.context.cookies()
+        cookies = page.context.cookies()
 
-    cookie_str = "; ".join([f"{cookie['name']}={cookie['value']}" for cookie in cookies])
+        cookie_str = "; ".join([f"{cookie['name']}={cookie['value']}" for cookie in cookies])
 
-  
-    url = "https://www.nodeseek.com/api/attendance?random=true"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0",
-        "Cookie": cookie_str
-    }
-    response = requests.post(url, headers=headers)
+        url = "https://www.nodeseek.com/api/attendance?random=true"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.0.0",
+            "Cookie": cookie_str
+        }
+        response = requests.post(url, headers=headers)
 
-    data = json.loads(response.text)
+        data = json.loads(response.text)
 
-    print(data["message"])
+        print(f"用户名: {account['username']}")
+        print(data["message"])
 
-    browser.close()
+        browser.close()
+        
