@@ -20,3 +20,7 @@ jobs:
       run: python script.py
       env:
         SESSION: ${{ secrets.SESSION }}
+    - name: Print environment variables
+      run: echo "SESSION is set to $SESSION"
+      env:
+         SESSION: ${{ secrets.SESSION }}
