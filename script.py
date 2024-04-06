@@ -21,3 +21,4 @@ for cookie in cookies:
     data = json.loads(response.text)
 
     print(data["message"])
+    
