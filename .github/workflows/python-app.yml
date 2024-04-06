@@ -1,0 +1,22 @@
+# .github/workflows/main.yml
+name: Run Python script
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'
+    - name: Install dependencies
+      run: pip install requests
+    - name: Run script
+      run: python script.py
+      env:
+        SESSION: ${{ secrets.SESSION }}
