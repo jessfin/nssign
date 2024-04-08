@@ -4,7 +4,7 @@ import json
 import time
 
 accounts = [
-    {'username': 'username1', 'password': 'password1'},
+    {'username': 'jess', 'password': 'xjlxjl123'},
     {'username': 'username2', 'password': 'password2'},
     {'username': 'username3', 'password': 'password3'}   #参照此示例可以继续添加需要签到的账号
 ]
