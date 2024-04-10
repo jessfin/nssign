@@ -1,4 +1,4 @@
-# nssign
+# nodeseek自动签到
  nodeseek自动获取随机鸡腿
  
 ## 使用方法
