@@ -1,5 +1,8 @@
 # nodeseek自动签到
  nodeseek自动获取随机鸡腿
+
+## 4月16日更新 
+现以可用
  
 ## 使用方法
 将username和password改成自己的
