@@ -31,6 +31,4 @@ jobs:
         playwright install
     - name: Run main.py with proxy
       run: |
-        export http_proxy="http://156.255.90.234:49473"
-        export https_proxy="http://156.255.90.234:49473"
         python main.py
